@@ -163,6 +163,15 @@ extern "C" VALUE rb_erode(VALUE self, VALUE rb_mat, VALUE rb_kernel) {
   return convertMatToRubyString(result);
 }
 
+extern "C" VALUE rb_invertImage(VALUE self, VALUE rb_mat) {
+  Mat mat = convertRubyStringToMat(rb_mat);
+
+  cvtColor(mat, mat, COLOR_BGR2GRAY);
+  mat = Scalar(255) - mat;
+
+  return mat(result);
+}
+
 extern "C" VALUE rb_findContours(VALUE self, VALUE rb_mat, VALUE rb_retrieve_type) {
   Mat mat = convertRubyStringToMat(rb_mat);
 
@@ -310,4 +319,5 @@ extern "C" void Init_minopencv() {
   rb_define_module_function(ImageProcessing, "gauss", rb_gauss, 2);
   rb_define_module_function(ImageProcessing, "erode", rb_erode, 2);
   rb_define_module_function(ImageProcessing, "dilate", rb_dilate, 2);
+  rb_define_module_function(ImageProcessing, "invert", rb_invertImage, 2);
 }
