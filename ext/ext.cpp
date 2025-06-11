@@ -169,7 +169,7 @@ extern "C" VALUE rb_invertImage(VALUE self, VALUE rb_mat) {
   cvtColor(mat, mat, COLOR_BGR2GRAY);
   mat = Scalar(255) - mat;
 
-  return mat(mat);
+  return convertMatToRubyString(mat);
 }
 
 extern "C" VALUE rb_findContours(VALUE self, VALUE rb_mat, VALUE rb_retrieve_type) {
