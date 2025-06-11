@@ -319,5 +319,5 @@ extern "C" void Init_minopencv() {
   rb_define_module_function(ImageProcessing, "gauss", rb_gauss, 2);
   rb_define_module_function(ImageProcessing, "erode", rb_erode, 2);
   rb_define_module_function(ImageProcessing, "dilate", rb_dilate, 2);
-  rb_define_module_function(ImageProcessing, "invert", rb_invertImage, 2);
+  rb_define_module_function(ImageProcessing, "invert", rb_invertImage, 1);
 }
