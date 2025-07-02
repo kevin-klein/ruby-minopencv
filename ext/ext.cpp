@@ -178,7 +178,7 @@ extern "C" VALUE rb_findContours(VALUE self, VALUE rb_mat, VALUE rb_retrieve_typ
   cvtColor(mat, mat, COLOR_BGR2GRAY);
   // mat = Scalar(255) - mat;
 
-  threshold(mat, mat, 40, 255, THRESH_BINARY);
+  threshold(mat, mat, 20, 255, THRESH_BINARY);
 
   vector<vector<Point>> contours;
   vector<Vec4i> hierarchy;
