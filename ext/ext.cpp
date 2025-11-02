@@ -305,7 +305,7 @@ extern "C" VALUE rb_rotateNoCutoff(VALUE self, VALUE rb_mat, VALUE rb_angle) {
     return convertMatToRubyString(dst);
 }
 
-extern "C" void Init_minopencv() {
+extern "C" void Init_rb_minopencv() {
   VALUE ImageProcessing = rb_define_module("MinOpenCV");
   rb_define_module_function(ImageProcessing, "extractFigure", rb_extractFigure, 2);
   rb_define_module_function(ImageProcessing, "findContours", rb_findContours, 2);
