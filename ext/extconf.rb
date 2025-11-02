@@ -22,4 +22,4 @@ puts "LDFLAGS:  #{$LDFLAGS}"
 
 # Name the extension the way you will `require` it:
 # If you'll `require 'minopencv'`, use 'minopencv'
-create_makefile("minopencv")
+create_makefile("rb_minopencv")
